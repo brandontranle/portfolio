@@ -29,3 +29,23 @@ html {
   font-family: "Raleway-Semibold";
   src: url("./assets/fonts/Raleway-SemiBold.ttf");
 }
+
+.diamond-star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  animation: pulse 2s infinite;
+
+  /*clip-path: polygon(49% 12%, 65% 53%, 50% 91%, 34% 54%);*/
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0; /* Start and end with full transparency */
+  }
+  50% {
+    opacity: 1; /* Middle point, fully visible */
+  }
+}

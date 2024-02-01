@@ -106,43 +106,52 @@ const Navbar = () => {
             <li>
               <a
                 href="/"
-                className="block py-2 px-3 text-lg text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white"
+                className="block py-2 px-3 text-lg text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white group transition duration-300"
                 aria-current="page"
               >
                 Home
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1.5px]  bg-white"></span>
               </a>
             </li>
             <li>
               <a
                 href="#steps"
-                className="block py-2 px-3 text-lg text-gray-900 rounded hover:text-gray-500 md:hover:bg-transparent md:border-0 md:hover:text-gray-500 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 px-3 text-lg text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white group transition duration-300"
+                aria-current="page"
               >
                 About
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1.5px] bg-white"></span>
               </a>
             </li>
             <li>
               <a
                 href="/FAQs"
-                className="block py-2 px-3 text-lg text-gray-900 rounded hover:bg-gray-300 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-grey-200 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 px-3 text-lg text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white group transition duration-300"
+                aria-current="page"
               >
                 Experience
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1.5px]  bg-white"></span>
               </a>
             </li>
 
             <li>
               <a
                 href="#projects"
-                className="block py-2 px-3 text-lg text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 px-3 text-lg text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white group transition duration-300"
+                aria-current="page"
               >
                 Projects
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1.5px]  bg-white"></span>
               </a>
             </li>
             <li>
               <a
                 href="#contact"
-                className="block py-2 px-3 text-lg text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="block py-2 px-3 text-lg text-white bg-transparent rounded md:bg-transparent md:text-white md:p-0 dark:text-white md:dark:text-white group transition duration-300"
+                aria-current="page"
               >
                 Contact
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-[1.5px]  bg-white"></span>
               </a>
             </li>
           </ul>
