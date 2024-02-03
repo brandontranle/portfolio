@@ -108,7 +108,7 @@ body {
 }
 .shooting_star::before {
   content: "";
-  position: fixed; /* Change from absolute to fixed */
+  position: absolute; /* Change from absolute to fixed */
   top: 50%;
   transform: translateY(-50%);
   width: 300px;
@@ -168,6 +168,8 @@ body {
   animation-duration: 2.5s;
 }
 
+/*
+
 .shooting_star:nth-child(6) {
   top: 0;
   right: 600px;
@@ -206,3 +208,4 @@ body {
   animation-delay: 2.75s;
   animation-duration: 2.25s;
 }
+*/
