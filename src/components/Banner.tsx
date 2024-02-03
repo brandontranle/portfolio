@@ -20,7 +20,7 @@ const Banner = () => {
           const animationDelay = `${index * 0.1}s`; // Adjust the delay as needed
 
           return (
-            <div
+            <span
               key={index}
               className="diamond-star animate-pulse w-2 h-2 bg-[#FFC701] rounded-full absolute border border-[#FFC701]"
               style={{

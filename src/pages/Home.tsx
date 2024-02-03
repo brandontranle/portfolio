@@ -1,6 +1,9 @@
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import About from "../sections/About";
+import Experience from "../sections/Experience";
+import Skills from "../sections/Skills";
+import Projects from "../sections/Projects";
 
 const Home = () => {
   return (
@@ -8,6 +11,9 @@ const Home = () => {
       <Navbar />
       <Banner />
       <About />
+      <Experience />
+      <Skills />
+      <Projects />
     </div>
   );
 };
