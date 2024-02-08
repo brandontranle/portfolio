@@ -1,4 +1,3 @@
-import React from "react";
 import ExpCard from "../components/Experience-Card";
 
 const Experience = () => {
