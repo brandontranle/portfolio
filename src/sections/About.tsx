@@ -73,12 +73,12 @@ const About = () => {
             own web app with my group of my friends.
           </p>
         </div>
-        <div className="w-full mt-20 lg:mt-0 p-5 lg:text-left lg:p-0 font-ralewayBold flex items-center">
-          <div className="ml-auto w-[500px] h-[420px] bg-[#DE7EFF] hidden sm:block right-0 absolute z-20 transition-all"></div>
-          <div className="bg-[#CB51F4] w-[600px] hidden sm:block ml-auto h-[400px] relative z-10 transition-all"></div>
+        <div className="w-full  lg:mt-0 p-5 lg:text-left lg:p-0 font-ralewayBold flex items-center justify-center xl:justify-normal ">
+          <div className="ml-auto w-[500px] h-[420px] bg-[#DE7EFF] hidden lg:block right-0 absolute z-20 transition-all"></div>
+          <div className="bg-[#CB51F4] w-[600px] hidden lg:block ml-auto h-[400px] relative z-10 transition-all"></div>
           <img
             src={portrait}
-            className="h-[350px]  md:mt-0 mt-32 z-20 ml-32 absolute rounded transition-all"
+            className="h-[350px]  md:mt-0  z-20 xl:ml-32 xl:absolute relative rounded transition-all"
           />
         </div>
       </div>

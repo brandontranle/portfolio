@@ -78,7 +78,7 @@ const Experience = () => {
   }, []);*/
 
   return (
-    <section className="w-full relative bg-[#272257] p-10 md:p-40 mt-52 md:mt-0 md:pb-0 pb-0">
+    <section className="w-full relative bg-[#272257] p-10 md:p-40  mt-0 md:pb-0 pb-0">
       <header className="w-full p-10 flex flex-row items-center">
         <hr
           className={`h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
@@ -106,7 +106,7 @@ const Experience = () => {
         />
       </header>
       {}
-      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-10">
+      <div className="flex flex-col  lg:grid lg:grid-cols-2 gap-10">
         {ExpCards.map((exp) => (
           <ExpCard
             title={exp.title}

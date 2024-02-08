@@ -5,8 +5,8 @@ export default {
     extend: {
       dropShadow: {
         glow: [
-          "0 0px 5px rgba(255,255, 255, 0.5)",
-          "0 0px 15px rgba(255, 255,255, 0.7)",
+          "0 0px 5px rgb(106, 100, 170, 0.5)",
+          "0 0px 15px rgb(135, 129, 196, 0.5)",
         ],
       },
     },
