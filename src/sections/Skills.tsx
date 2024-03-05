@@ -1,5 +1,5 @@
-import SkillsCard from "../components/Skills-Card";
-
+//import SkillsCard from "../components/Skills-Card";
+/*
 const Skills = () => {
   const skillslist = [
     {
@@ -71,3 +71,4 @@ const Skills = () => {
 };
 
 export default Skills;
+*/

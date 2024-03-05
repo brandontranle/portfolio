@@ -1,87 +1,155 @@
 import portrait from "../assets/images/me.jpg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+/*
+const fadeInContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+*/
+const fadeInItemVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1 },
+};
+
+const smoothRightContainerVariants = {
+  hidden: { opacity: 1 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25,
+    },
+  },
+};
+
+const smoothRightVariants = {
+  hidden: { scaleX: 0 },
+  show: {
+    scaleX: 1,
+    transition: { duration: 0.8, ease: "easeInOut" },
+  },
+};
+
+const smoothRightVariantsQuick = {
+  hidden: { scaleX: 0 },
+  show: {
+    scaleX: 1,
+    transition: { duration: 0.25, ease: "easeInOut" },
+  },
+};
+
+const fadeInParagraphsContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.25, // Stagger the children with 0.2 seconds delay between each
+    },
+  },
+};
 
 const About = () => {
-  /*
-  const [scrollWidth, setScrollWidth] = useState(0);
-  const [lineColor, setLineColor] = useState("bg-gray-200");
-  const [showSquares, setShowSquares] = useState(false);
-  /*
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollableHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = (window.scrollY / scrollableHeight) * 100;
-      setScrollWidth(scrollProgress);
-
-      if (scrollProgress < 33) {
-        setLineColor("bg-gray-300");
-      } else if (scrollProgress < 66) {
-        setLineColor("bg-gray-500");
-      } else {
-        setLineColor("bg-white");
-      }
-      setShowSquares(true);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);*/
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Adjust based on when you want the animation to trigger (1 = fully visible)
+    //triggerOnce: true, // Ensures the animation only plays once
+  });
 
   return (
-    <section className="w-full relative bg-[#272257] pb-10" id="#about">
-      <header className="w-full p-10 flex flex-row items-center">
-        <h1 className="text-4xl font-bold font-ralewayBold ml-0 text-center w-full lg:w-[30%] lg:text-left  lg:ml-[20%]">
+    <motion.section className="w-full relative bg-[#272257] pb-10" id="#about">
+      <header className="w-full p-10 flex flex-row items-center" ref={ref}>
+        <motion.h1
+          variants={fadeInItemVariants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          className="text-4xl font-bold font-ralewayBold ml-0 text-center w-full lg:w-[30%] lg:text-left  lg:ml-[20%]"
+        >
           {" "}
           <span className="text-[#DE7EFF]"> 01. </span> ABOUT ME
-        </h1>
-        <hr
-          className="h-[2px] w-[100%] mr-20 border-0 hidden lg:block bg-white"
-          style={
-            {
-              //width: `${scrollWidth}%`,
-              //transition: "width 0.7s ease, background-color 0.7s ease",
-              // You can adjust the duration and timing function here
-            }
-          }
+        </motion.h1>
+        <motion.hr
+          className="h-[2px] w-[100%] origin-right mr-20 border-0 hidden lg:block bg-white"
+          variants={smoothRightVariants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
         />
       </header>
       <div className="flex flex-col xl:flex-row mt-10">
-        <div className="w-full text-center p-5 xl:pl-40 xl:text-left xl:p-0 font-ralewayBold">
-          <h1 className="text-4xl font-bold font-ralewayBold text-[#FFC701] ">
+        <motion.div
+          variants={fadeInParagraphsContainerVariants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"} // Trigger based on inView
+          className="w-full text-center p-5 xl:pl-40 xl:text-left xl:p-0 font-ralewayBold"
+          ref={ref} // Attach ref here if this is the container you want to track for inView
+        >
+          <motion.h1
+            variants={fadeInItemVariants}
+            className="text-4xl font-bold font-ralewayBold text-[#FFC701] "
+          >
             {" "}
             Hi, I'm Brandon Le{" "}
-          </h1>
-          <p className="text-[#BFBFBF] text-2xl mt-10">
+          </motion.h1>
+          <motion.p
+            variants={fadeInItemVariants}
+            className="text-[#BFBFBF] text-2xl mt-10"
+          >
             {" "}
             I am a second-year Computer Science major at UCLA! Besides being a
             student, I am a Full-Stack Developer or Software Engineer, and
             running enthusiast.
-          </p>
-          <p className="text-[#BFBFBF] text-2xl mt-5">
+          </motion.p>
+          <motion.p
+            variants={fadeInItemVariants}
+            className="text-[#BFBFBF] text-2xl mt-5"
+          >
             {" "}
             My passion for web development grew in 2022, when I landed my first
             internship at the community college I graduated from while I was in
             high school!
-          </p>
-          <p className="text-[#BFBFBF] text-2xl mt-5">
+          </motion.p>
+          <motion.p
+            variants={fadeInItemVariants}
+            className="text-[#BFBFBF] text-2xl mt-5"
+          >
             Fast forward to today, I’ve had the privilege to work for a
             community college, two start-ups, and have led the production of my
             own web app with my group of my friends.
-          </p>
-        </div>
-        <div className="w-full  lg:mt-0 p-5 lg:text-left lg:p-0 font-ralewayBold flex items-center justify-center xl:justify-normal ">
-          <div className="ml-auto w-[500px] h-[420px] bg-[#DE7EFF] hidden lg:block right-0 absolute z-20 transition-all"></div>
-          <div className="bg-[#CB51F4] w-[600px] hidden lg:block ml-auto h-[400px] relative z-10 transition-all"></div>
-          <img
+          </motion.p>
+        </motion.div>
+        <motion.div
+          variants={smoothRightContainerVariants}
+          initial="hidden"
+          animate="show"
+          className="w-full lg:mt-0 p-5 lg:text-left lg:p-0 font-ralewayBold flex items-center justify-center xl:justify-normal"
+          ref={ref}
+        >
+          <motion.div
+            variants={fadeInItemVariants}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+            className="ml-auto w-[500px] h-[420px] origin-right bg-[#DE7EFF] hidden lg:block right-0 absolute z-20 transition-all"
+          ></motion.div>
+          <motion.div
+            variants={smoothRightVariantsQuick}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+            className="bg-[#CB51F4] w-[600px] origin-right hidden lg:block ml-auto h-[400px] relative z-10 transition-all"
+          ></motion.div>
+          <motion.img
+            variants={fadeInItemVariants}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
             src={portrait}
             className="h-[350px]  md:mt-0  z-20 xl:ml-32 xl:absolute relative rounded transition-all"
           />
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

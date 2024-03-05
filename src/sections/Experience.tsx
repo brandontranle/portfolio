@@ -1,4 +1,6 @@
 import ExpCard from "../components/Experience-Card";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Experience = () => {
   //const [scrollWidth, setScrollWidth] = useState(0);
@@ -75,12 +77,61 @@ const Experience = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);*/
+  /*
+  const fadeInItemVariants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
+  const smoothRightContainerVariants = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25,
+      },
+    },
+  };*/
+
+  const smoothRightVariants = {
+    hidden: { scaleX: 0 },
+    show: {
+      scaleX: 1,
+      transition: { duration: 0.8, ease: "easeInOut" },
+    },
+  };
+
+  const fadeInParagraphsContainerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25, // Stagger the children with 0.2 seconds delay between each
+      },
+    },
+  };
+
+  const fadeInItemVariants = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
+  const { ref, inView } = useInView({
+    threshold: 0.1, // Adjust based on when you want the animation to trigger (1 = fully visible)
+    //triggerOnce: true, // Ensures the animation only plays once
+  });
 
   return (
-    <section className="w-full relative bg-[#272257] p-10 md:p-40  mt-0 md:pb-0 pb-0">
+    <motion.section
+      className="w-full relative bg-[#272257] p-10 md:p-40  mt-0 md:pb-0 pb-0"
+      ref={ref}
+    >
       <header className="w-full p-10 flex flex-row items-center">
-        <hr
-          className={`h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
+        <motion.hr
+          variants={smoothRightVariants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          className={`origin-left h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
           style={
             {
               //width: `${scrollWidth}%`,
@@ -93,8 +144,11 @@ const Experience = () => {
           {" "}
           <span className="text-[#DE7EFF]"> 02. </span> EXPERIENCE
         </h1>
-        <hr
-          className={`h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
+        <motion.hr
+          variants={smoothRightVariants}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          className={`origin-right h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
           style={
             {
               //width: `${scrollWidth}%`,
@@ -105,18 +159,30 @@ const Experience = () => {
         />
       </header>
       {}
-      <div className="flex flex-col  lg:grid lg:grid-cols-2 gap-10">
+      <motion.div
+        variants={fadeInParagraphsContainerVariants}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"} // Trigger based on inView
+        className="flex flex-col  lg:grid lg:grid-cols-2 gap-10"
+        ref={ref}
+      >
         {ExpCards.map((exp) => (
-          <ExpCard
-            title={exp.title}
-            company={exp.company}
-            date={exp.date}
-            points={exp.points}
-            skills={exp.skills}
-          />
+          <motion.div
+            variants={fadeInItemVariants}
+            initial="hidden"
+            animate={inView ? "show" : "hidden"}
+          >
+            <ExpCard
+              title={exp.title}
+              company={exp.company}
+              date={exp.date}
+              points={exp.points}
+              skills={exp.skills}
+            />
+          </motion.div>
         ))}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

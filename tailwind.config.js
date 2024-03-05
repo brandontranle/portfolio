@@ -16,5 +16,11 @@ export default {
       ralewaySemibold: ["Raleway-Semibold", "sans-serif"],
     },
   },
-  plugins: [],
+  safelist: [
+    "!duration-[0ms]",
+    "!delay-[0ms]",
+    'html.js :where([class*="taos:"]:not(.taos-init))',
+  ],
+
+  plugins: ["taos/plugin"],
 };
