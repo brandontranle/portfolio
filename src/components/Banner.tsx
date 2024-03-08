@@ -1,4 +1,4 @@
-import Background from "../assets/images/midnights.jpg";
+import Background from "../assets/images/mesh5.png";
 import Airpods from "../assets/svgs/Airpods";
 import RunningShoes from "../assets/svgs/RunningShoes";
 import Signature from "../assets/svgs/Signature";
@@ -7,10 +7,10 @@ import Linkedin from "../assets/svgs/Linkedin";
 
 const Banner = () => {
   return (
-    <section className="h-[835px] w-full flex flex-row relative place-items-center justify-center">
+    <section className=" h-[835px] w-full flex flex-row relative place-items-center justify-center">
       <img
         src={Background}
-        className="top-0 absolute object-cover h-[835px] w-full"
+        className="top-0 absolute object-fill h-[835px] w-full"
       />
 
       <div className="absolute h-full w-full flex items-center justify-center">

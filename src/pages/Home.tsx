@@ -5,16 +5,20 @@ import Experience from "../sections/Experience";
 //import Skills from "../sections/Skills";
 import Projects from "../sections/Projects";
 import Skills from "../sections/Revamped-Skills";
+import Contact from "../sections/Contact";
+
+//lazy load these
 
 const Home = () => {
   return (
-    <div className="h-full w-full bg-[#272257] flex flex-col">
+    <div className="h-full w-full flex flex-col">
       <Navbar />
       <Banner />
       <About />
       <Experience />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   );
 };

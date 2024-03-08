@@ -61,7 +61,7 @@ const About = () => {
   });
 
   return (
-    <motion.section className="w-full relative bg-[#272257] pb-10" id="#about">
+    <motion.section className="w-full gradient-bg relative  pb-10" id="#about">
       <header className="w-full p-10 flex flex-row items-center" ref={ref}>
         <motion.h1
           variants={fadeInItemVariants}

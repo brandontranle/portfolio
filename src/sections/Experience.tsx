@@ -123,7 +123,7 @@ const Experience = () => {
 
   return (
     <motion.section
-      className="w-full relative bg-[#272257] p-10 md:p-40  mt-0 md:pb-0 pb-0"
+      className="w-full relative  p-10 md:p-40  mt-0 md:pb-0 pb-0"
       ref={ref}
     >
       <header className="w-full p-10 flex flex-row items-center">

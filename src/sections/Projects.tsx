@@ -120,7 +120,7 @@ const Projects = () => {
   return (
     <motion.section
       ref={ref}
-      className="w-full relative bg-[#272257] p-10 pt-0 md:px-40 md:mt-0 md:pb-0 mb-10 font-ralewayBold flex flex-col items-center justify-center"
+      className="w-full relative  p-10 pt-0 md:px-40 md:mt-0 md:pb-0 mb-10 font-ralewayBold flex flex-col items-center justify-center"
     >
       <header className="w-full p-10 flex flex-row items-center">
         <motion.hr
@@ -128,13 +128,6 @@ const Projects = () => {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           className={`origin-left h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
-          style={
-            {
-              //width: `${scrollWidth}%`,
-              //transition: "width 0.7s ease, background-color 0.7s ease",
-              // You can adjust the duration and timing function here
-            }
-          }
         />
         <h1 className="text-4xl font-bold font-ralewayBold  text-center w-full  ">
           {" "}
@@ -228,13 +221,6 @@ const Projects = () => {
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           className={`origin-left h-[2px] w-[100%]  ml-auto border-0  bg-white hidden lg:block`}
-          style={
-            {
-              //width: `${scrollWidth}%`,
-              //transition: "width 0.7s ease, background-color 0.7s ease",
-              // You can adjust the duration and timing function here
-            }
-          }
         />
         <h1 className="text-4xl font-bold font-ralewayBold  text-center w-full  ">
           {" "}
