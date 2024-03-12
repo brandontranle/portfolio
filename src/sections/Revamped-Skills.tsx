@@ -167,7 +167,7 @@ const Skills = () => {
           SKILLS
         </h1>
       </header>
-      <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-3 gap-32">
+      <div className="flex flex-col justify-center items-center lg:grid lg:grid-cols-3 gap-20 lg:gap-32">
         {skillslist.map((skill) => (
           <SkillsCard
             title={skill.title}

@@ -2,11 +2,24 @@ import miso from "../assets/images/miso.png";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import ProjectCard from "../components/Project-Card";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Projects = () => {
   const [showMore, setShowMore] = useState(false);
-  const skills = ["Typescript", "Node.js", "MongoDB", "SCSS"];
+  const skills = ["Typescript", "Nodejs", "MongoDB", "Tailwind"];
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const projects = [
     {
       image: miso as string,
@@ -146,65 +159,125 @@ const Projects = () => {
           <div className="flex-col flex items-center mb-5 xl:mb-0 xl:ml-auto text-2xl  ">
             <h3 className=" xl:ml-auto text-[#DE7EFF]"> Featured Project </h3>
             <h3 className="xl:ml-auto text-4xl"> Miso </h3>
-            <div className="xl:ml-auto flex flex-row justify-between  w-full lg:w-[500px] gap-2 mt-10 z-40 lg:mt-auto lg:mb-14 rounded-3xl">
+            <div className="xl:ml-auto flex flex-row justify-center lg:justify-between w-full lg:w-[500px] gap-2 mt-5 z-40 lg:mt-auto lg:mb-14 rounded-3xl">
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="lg:ml-auto rounded-3xl w-[100px] h-[40px] flex justify-center items-center text-sm text-center p-2 bg-[#EAACFF] text-black"
+                  className={` ${
+                    isMobile
+                      ? `devicon-${
+                          skill.toLowerCase() === "express" ||
+                          skill.toLowerCase() === "emacs" ||
+                          skill.toLowerCase() === "influxdb"
+                            ? `${skill.toLowerCase()}-original`
+                            : `${skill.toLowerCase()}-plain colored`
+                        }
+                        ${
+                          skill === "Tailwind" &&
+                          "devicon-tailwindcss-plain colored"
+                        }`
+                      : "lg:ml-auto rounded-3xl w-[100px] h-[40px] flex justify-center items-center text-sm text-center p-2 bg-[#EAACFF] text-black"
+                  }`}
                 >
-                  {skill}
+                  {!isMobile && skill}
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="lg:ml-auto xl:w-[650px] w-full lg:h-[300px] h-full relative bg-[#151135]  sm:block right-0 mr-40 xl:absolute z-20 xl:mt-20 mb-10 xl:mb-0 rounded-3xl p-10">
-          <p className="text-right text-md">
-            Miso, a productivity app, designed to elevate your work efficiency
-            while offering a touch of comfort.
-            <br />
-            <br />
-            Meet Miso, our adorable cat mascot, keeping you company on-screen to
-            uplift your spirits during those long study or work sessions.
-            <br />
-            <br />
-            Having struggled with time management and study habits, I created
-            Miso to help me! With the motive of helping people study and reduce
-            stress with our beloved Miso cat, and the various widgets, we made,
-            Miso is for you!
+        <div className="lg:ml-auto xl:w-[650px] w-full lg:h-[300px] h-full relative lg:bg-[#151135]  sm:block right-0 lg:mr-40 xl:absolute z-20 xl:mt-20 lg:mb-10 xl:mb-0 rounded-3xl lg:p-10">
+          <p className="lg:text-right sm:text-lg text-center lg:text-md">
+            {isMobile ? (
+              <>
+                {" "}
+                Miso, a productivity app, designed to elevate your work
+                efficiency while offering a touch of comfort.
+                <br />
+                <button className="mt-5 p-4 bg-[#151135] rounded-lg w-full">
+                  {" "}
+                  View on Github{" "}
+                </button>
+              </>
+            ) : (
+              <>
+                Miso, a productivity app, designed to elevate your work
+                efficiency while offering a touch of comfort.
+                <br />
+                <br />
+                Meet Miso, our adorable cat mascot, keeping you company
+                on-screen to uplift your spirits during those long study or work
+                sessions.
+                <br />
+                <br />
+                Having struggled with time management and study habits, I
+                created Miso to help me! With the motive of helping people study
+                and reduce stress with our beloved Miso cat, and the various
+                widgets, we made, Miso is for you!
+              </>
+            )}
           </p>
         </div>
       </div>
 
       <div className="flex flex-col-reverse rounded-xl bg-[#413d6a] p-5 xl:p-0 xl:bg-transparent xl:flex-row">
-        <div className="xl:mr-auto xl:w-[650px] w-full lg:h-[300px] h-full relative bg-[#151135]  sm:block left-0 xl:ml-40 xl:absolute z-20 xl:mt-20 mb-10 xl:mb-0 rounded-3xl p-10">
-          <p className="text-right text-md">
-            Miso, a productivity app, designed to elevate your work efficiency
-            while offering a touch of comfort.
-            <br />
-            <br />
-            Meet Miso, our adorable cat mascot, keeping you company on-screen to
-            uplift your spirits during those long study or work sessions.
-            <br />
-            <br />
-            Having struggled with time management and study habits, I created
-            Miso to help me! With the motive of helping people study and reduce
-            stress with our beloved Miso cat, and the various widgets, we made,
-            Miso is for you!
+        <div className="xl:mr-auto xl:w-[650px] w-full lg:h-[300px] h-full relative lg:bg-[#151135]  sm:block left-0 xl:ml-40 xl:absolute z-20 xl:mt-20 lg:mb-10 xl:mb-0 rounded-3xl lg:p-10">
+          <p className="lg:text-right sm:text-lg text-center lg:text-md">
+            {isMobile ? (
+              <>
+                {" "}
+                Miso, a productivity app, designed to elevate your work
+                efficiency while offering a touch of comfort.
+                <br />
+                <button className="mt-5 p-4 bg-[#151135] rounded-lg w-full">
+                  {" "}
+                  View on Github{" "}
+                </button>
+              </>
+            ) : (
+              <>
+                Miso, a productivity app, designed to elevate your work
+                efficiency while offering a touch of comfort.
+                <br />
+                <br />
+                Meet Miso, our adorable cat mascot, keeping you company
+                on-screen to uplift your spirits during those long study or work
+                sessions.
+                <br />
+                <br />
+                Having struggled with time management and study habits, I
+                created Miso to help me! With the motive of helping people study
+                and reduce stress with our beloved Miso cat, and the various
+                widgets, we made, Miso is for you!
+              </>
+            )}
           </p>
         </div>
         <div className="xl:flex-row flex flex-col w-full">
           <div className="flex-col flex  mb-5 xl:mb-0 xl:mr-auto text-2xl items-center xl:items-start ">
             <h3 className=" text-[#DE7EFF]"> Featured Project </h3>
             <h3 className="xl:mr-auto text-4xl lg:mb-10"> Physiobit </h3>
-            <div className="xl:mr-auto flex flex-row justify-between w-full mt-10 lg:w-[500px] gap-2 lg:mt-auto items-end lg:mb-16 h-full  z-40 xl:mt-14 rounded-3xl   ">
+            <div className="xl:mr-auto flex flex-row justify-center lg:justify-between gap-2 w-full mt-5 lg:w-[500px] lg:mt-auto items-end lg:mb-16 h-full  z-40 xl:mt-14 rounded-3xl   ">
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className=" rounded-3xl w-[100px] h-[40px] flex justify-center items-center text-sm text-center p-2 bg-[#EAACFF] text-black"
+                  className={` ${
+                    isMobile
+                      ? `devicon-${
+                          skill.toLowerCase() === "express" ||
+                          skill.toLowerCase() === "emacs" ||
+                          skill.toLowerCase() === "influxdb"
+                            ? `${skill.toLowerCase()}-original`
+                            : `${skill.toLowerCase()}-plain colored`
+                        }
+                      ${
+                        skill === "Tailwind" &&
+                        "devicon-tailwindcss-plain colored"
+                      }`
+                      : "lg:mr-auto rounded-3xl w-[100px] h-[40px] flex justify-center items-center text-sm text-center p-2 bg-[#EAACFF] text-black"
+                  }`}
                 >
-                  {skill}
+                  {!isMobile && skill}
                 </div>
               ))}
             </div>

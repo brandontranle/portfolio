@@ -1,4 +1,4 @@
-import Background from "../assets/images/mesh5.png";
+import Background from "../assets/images/mesh6.png";
 import Airpods from "../assets/svgs/Airpods";
 import RunningShoes from "../assets/svgs/RunningShoes";
 import Signature from "../assets/svgs/Signature";
@@ -7,10 +7,10 @@ import Linkedin from "../assets/svgs/Linkedin";
 
 const Banner = () => {
   return (
-    <section className=" h-[835px] w-full flex flex-row relative place-items-center justify-center">
+    <section className=" h-[850px] w-full flex flex-row relative place-items-center justify-center">
       <img
         src={Background}
-        className="top-0 absolute object-fill h-[835px] w-full"
+        className="top-0 absolute object-fill h-full w-full"
       />
 
       <div className="absolute h-full w-full flex items-center justify-center">
@@ -34,7 +34,7 @@ const Banner = () => {
       </div>
 
       <div className="flex flex-col z-10 place-items-center justify-center">
-        <h1 className="text-[#FFC701] text-5xl font-bold mt-52 font-ralewayBold">
+        <h1 className="text-[#FFC701] text-5xl md:text-6xl font-bold mt-52 font-ralewayBold">
           {" "}
           BRANDON LE{" "}
         </h1>{" "}
@@ -46,7 +46,7 @@ const Banner = () => {
         <br />
         <div className="flex flex-row pb-32">
           <Airpods />
-          <p className="text-[#BFBFBF] text-lg">
+          <p className="text-[#BFBFBF] text-sm md:text-lg">
             8 Hours ago, I jammed to Enchanted (Taylors Version) by Taylor Swift
           </p>
         </div>
@@ -62,11 +62,11 @@ const Banner = () => {
           "Run Fast, Still Last."{" "}
         </p>
         <Signature />
-      </div>
-      <div className="absolute flex flex-col justify-center place-items-center right-0 p-10">
-        <Github />
-        <br />
-        <Linkedin />
+        <div className="md:absolute relative flex flex-row gap-5 md:gap-0 md:flex-col justify-center place-items-center md:right-0 p-10">
+          <Github />
+          <br />
+          <Linkedin />
+        </div>
       </div>
     </section>
   );
