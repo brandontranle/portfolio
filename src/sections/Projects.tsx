@@ -187,7 +187,7 @@ const Projects = () => {
         </div>
 
         <div className="lg:ml-auto xl:w-[650px] w-full lg:h-[300px] h-full relative lg:bg-[#151135]  sm:block right-0 lg:mr-40 xl:absolute z-20 xl:mt-20 lg:mb-10 xl:mb-0 rounded-3xl lg:p-10">
-          <p className="lg:text-right sm:text-lg text-center lg:text-md">
+          <p className="lg:text-right text-center ">
             {isMobile ? (
               <>
                 {" "}
@@ -222,7 +222,7 @@ const Projects = () => {
 
       <div className="flex flex-col-reverse rounded-xl bg-[#413d6a] p-5 xl:p-0 xl:bg-transparent xl:flex-row">
         <div className="xl:mr-auto xl:w-[650px] w-full lg:h-[300px] h-full relative lg:bg-[#151135]  sm:block left-0 xl:ml-40 xl:absolute z-20 xl:mt-20 lg:mb-10 xl:mb-0 rounded-3xl lg:p-10">
-          <p className="lg:text-right sm:text-lg text-center lg:text-md">
+          <p className="lg:text-right text-center ">
             {isMobile ? (
               <>
                 {" "}

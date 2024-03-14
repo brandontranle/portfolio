@@ -671,10 +671,6 @@ video {
   margin-right: 0.75rem;
 }
 
-.mr-40 {
-  margin-right: 10rem;
-}
-
 .mt-0 {
   margin-top: 0px;
 }
@@ -799,10 +795,6 @@ video {
   width: 375px;
 }
 
-.w-\[400px\] {
-  width: 400px;
-}
-
 .w-\[500px\] {
   width: 500px;
 }
@@ -889,10 +881,6 @@ video {
   justify-content: space-between;
 }
 
-.justify-evenly {
-  justify-content: space-evenly;
-}
-
 .gap-1 {
   gap: 0.25rem;
 }
@@ -903,6 +891,10 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-20 {
+  gap: 5rem;
 }
 
 .gap-24 {
@@ -919,10 +911,6 @@ video {
 
 .gap-5 {
   gap: 1.25rem;
-}
-
-.gap-20 {
-  gap: 5rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1091,10 +1079,6 @@ video {
   padding: 1.25rem;
 }
 
-.p-3 {
-  padding: 0.75rem;
-}
-
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -1108,6 +1092,11 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .pb-0 {
@@ -1136,10 +1125,6 @@ video {
 
 .text-center {
   text-align: center;
-}
-
-.text-right {
-  text-align: right;
 }
 
 .font-ralewayBold {
@@ -1573,11 +1558,6 @@ body {
   .sm\:text-left {
     text-align: left;
   }
-
-  .sm\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -1722,20 +1702,20 @@ body {
     margin-left: auto;
   }
 
-  .lg\:mt-0 {
-    margin-top: 0px;
-  }
-
-  .lg\:mt-auto {
-    margin-top: auto;
+  .lg\:mr-40 {
+    margin-right: 10rem;
   }
 
   .lg\:mr-auto {
     margin-right: auto;
   }
 
-  .lg\:mr-40 {
-    margin-right: 10rem;
+  .lg\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .lg\:mt-auto {
+    margin-top: auto;
   }
 
   .lg\:block {
@@ -1756,6 +1736,10 @@ body {
 
   .lg\:w-\[30\%\] {
     width: 30%;
+  }
+
+  .lg\:w-\[400px\] {
+    width: 400px;
   }
 
   .lg\:w-\[500px\] {
@@ -1787,12 +1771,17 @@ body {
     padding: 0px;
   }
 
+  .lg\:p-10 {
+    padding: 2.5rem;
+  }
+
   .lg\:p-40 {
     padding: 10rem;
   }
 
-  .lg\:p-10 {
-    padding: 2.5rem;
+  .lg\:px-20 {
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 
   .lg\:text-left {
@@ -1801,6 +1790,11 @@ body {
 
   .lg\:text-right {
     text-align: right;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 

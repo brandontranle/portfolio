@@ -55,19 +55,19 @@ const Contact = () => {
           You saw exactly what you need... where shall we begin?{" "}
         </h1>
         <div className="flex flex-col md:flex-row justify-center gap-10 mt-10 items-center w-full">
-          <div className="bg-[#433e6c] h-[150px] w-[400px] flex-col flex items-center justify-center rounded-lg p-5">
-            <span className="text-center text-2xl text-[#FFC701]">
+          <div className="bg-[#433e6c] h-[150px] w-full flex-col flex items-center justify-center rounded-lg py-5 lg:px-20 lg:w-[400px]">
+            <span className="text-center text-2xl  w-full text-[#FFC701]">
               Academic Email{" "}
             </span>
-            <span className="text-center text-2xl text-white">
+            <span className="text-center lg:text-2xl text-xl text-white">
               brandonle@ucla.edu{" "}
             </span>
           </div>
-          <div className="bg-[#433e6c] h-[150px] w-[400px] flex-col flex items-center justify-center rounded-lg p-5">
+          <div className="bg-[#433e6c] h-[150px] w-full flex-col flex items-center justify-center rounded-lg py-5 lg:px-20 lg:w-[400px]">
             <span className="text-center text-2xl text-[#FFC701]">
               Personal Email{" "}
             </span>
-            <span className="text-center text-2xl text-white">
+            <span className="text-center  text-xl lg:text-2xl text-white">
               brandonle831@gmail.com{" "}
             </span>
           </div>
