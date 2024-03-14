@@ -1,3 +1,5 @@
+import { useMedia } from "../util/MediaContext";
+
 interface ExpCardProps {
   title: string;
   company: string;
@@ -13,16 +15,27 @@ const ExpCard: React.FC<ExpCardProps> = ({
   points,
   skills,
 }) => {
+  const { isMobile } = useMedia();
+
   return (
     <div
-      className="experience rounded-3xl text-center sm:text-left font-ralewayBold w-full h-full flex flex-col p-10 z-20 bg-[#53457a] hover:drop-shadow-glow hover:cursor-pointer"
+      className="experience rounded-3xl sm:text-left font-ralewayBold w-full h-full flex flex-col p-10 z-20 bg-[#53457a] hover:drop-shadow-glow hover:cursor-pointer"
       style={{ transition: "0.5s ease" }}
     >
-      <header className="text-3xl text-[#EAACFF]">
-        {title} • {company}
+      <header className="text-xl md:text-3xl text-[#EAACFF]">
+        {isMobile ? (
+          <>
+            {title}
+            <br />@ {company}
+          </>
+        ) : (
+          <>
+            {title} • {company}
+          </>
+        )}
       </header>
       <div className="text-lg"> {date} </div>
-      <div className="text-lg leading-6 gap-3 flex flex-col text-left">
+      <div className="text-md md:text-lg leading-6 gap-3 flex flex-col text-left">
         {points.map((point, index) => (
           <div key={index} className="flex items-center">
             <span
@@ -35,13 +48,25 @@ const ExpCard: React.FC<ExpCardProps> = ({
           </div>
         ))}
       </div>
-      <div className="grid-cols-3 inline-grid md:flex md:flex-row gap-3 mt-3 place-items-center justify-center md:items-start md:justify-start">
+      <div className="xl:grid-cols-3 flex flex-row md:flex md:flex-row gap-3 mt-3 place-items-center justify-start md:items-start md:justify-start">
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="rounded-3xl w-[100px] text-sm text-center p-2 bg-[#EAACFF] text-black"
+            className={`${
+              isMobile
+                ? `devicon-${
+                    skill.toLowerCase() === "express" ||
+                    skill.toLowerCase() === "emacs" ||
+                    skill.toLowerCase() === "influxdb"
+                      ? `${skill.toLowerCase()}-original`
+                      : `${skill.toLowerCase()}-plain colored`
+                  }
+              ${skill === "Tailwind" && "devicon-tailwindcss-plain colored"}
+              ${skill === "Node.js" && "devicon-nodejs-plain"} text-[2rem]`
+                : "rounded-3xl w-[100px] text-sm text-center p-2 bg-[#EAACFF] text-black"
+            }`}
           >
-            {skill}
+            {!isMobile && skill}
           </div>
         ))}
       </div>

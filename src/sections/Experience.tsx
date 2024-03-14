@@ -17,7 +17,7 @@ const Experience = () => {
         "Optimized internship searching algorithm for more accuracy and performance.",
         "Constructed a blog site to advertise latest start-ups and created another source of income through sponsoring start-ups.",
       ],
-      skills: ["C#", "React.js", "CSS", "SQL", "Azure"],
+      skills: ["C#", "React", "CSS3", "MySQL", "Azure"],
     },
     {
       title: "Software Developer Intern",
@@ -32,7 +32,7 @@ const Experience = () => {
     },
     {
       title: "Lead Software Engineer Intern",
-      company: "MPC",
+      company: "Hexfork",
       date: "June 2023 • November 2023",
       points: [
         " Led the production of a full-stack web application, serving as the company’s landing page. ",
@@ -50,7 +50,7 @@ const Experience = () => {
         "Wrote python scripts to sort the data from .csv files.",
         "Implemented an optimized automated algorithm to organize students’ input data and perform the disbursement of project links to each user for peer grading and collecting submissions.",
       ],
-      skills: ["PHP", "Python", "CSS", "HTML", "SQLite"],
+      skills: ["PHP", "Python", "CSS3", "HTML5", "SQLite"],
     },
   ];
 
